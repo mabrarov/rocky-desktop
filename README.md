@@ -12,7 +12,7 @@
 ## Steps to build
 
 1. Download [Rocky-9.5-x86_64-dvd.iso](https://rockylinux.org/ru/download) and put it into the root directory of repository.
-1. Download [VBoxGuestAdditions_7.1.4.iso](https://download.virtualbox.org/virtualbox/7.1.4/VBoxGuestAdditions_7.1.4.iso) and put it into the root directory of repository.
+1. Download [VBoxGuestAdditions_7.1.6.iso](https://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso) and put it into the root directory of repository.
 1. Run
     ```bash
     packer init rocky-desktop.pkr.hcl && packer build rocky-desktop.pkr.hcl
