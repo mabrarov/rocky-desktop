@@ -84,7 +84,7 @@ echo "minrate=1" >> /etc/dnf/dnf.conf
 
 # Update
 dnf --enablerepo=base clean metadata
-dnf update -y
+dnf update -y --refresh
 
 # Turning off sshd DNS lookup to prevent timeout delay
 sed -i -r 's/^(UseDNS\s+.+)$/#\1/' /etc/ssh/sshd_config

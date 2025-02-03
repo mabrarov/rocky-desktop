@@ -2,7 +2,7 @@
 
 echo "==> Installing kernel headers: $(uname -r)"
 dnf install -y epel-release
-dnf update -y --refresh
+dnf update -y --refresh --exclude=kernel*
 dnf install -y dkms "kernel-devel-$(uname -r)" "kernel-headers-$(uname -r)" gcc make bzip2 perl elfutils-libelf-devel
 
 echo "==> Installing VirtualBox guest additions"
