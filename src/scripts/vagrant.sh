@@ -27,3 +27,8 @@ mkdir -pm 700 "${vagrant_user_home}/.ssh"
 echo "${vagrant_insecure_key}" > "${vagrant_user_home}/.ssh/authorized_keys"
 chmod 0600 "${vagrant_user_home}/.ssh/authorized_keys"
 chown -R ${vagrant_user}:${vagrant_user} ${vagrant_user_home}/.ssh
+# Disable password authentication when accessing over SSH
+cat << EOF >> /etc/ssh/sshd_config
+Match User ${vagrant_user}
+    PasswordAuthentication no
+EOF
