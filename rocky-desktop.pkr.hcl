@@ -100,6 +100,18 @@ build {
   sources = ["virtualbox-iso.rocky-desktop"]
   provisioner "shell" {
     execute_command = "echo '${var.guest_os_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    scripts = [
+      "src/scripts/update.sh"
+    ]
+  }
+  provisioner "shell" {
+    execute_command = "echo '${var.guest_os_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    inline = ["reboot"]
+    expect_disconnect = true
+    pause_after = "60s"
+  }
+  provisioner "shell" {
+    execute_command = "echo '${var.guest_os_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
     environment_vars = [
       "SSH_USER=${var.guest_os_username}",
       "VBOXSF_USER=${var.guest_os_username}",
