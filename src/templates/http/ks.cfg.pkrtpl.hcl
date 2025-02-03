@@ -30,11 +30,13 @@ user --name="${username}" --plaintext --password "${password}" --groups=users,wh
 @input-methods
 @network-tools
 @remote-desktop-clients
+@system-admin-tools
 kernel-devel
 kernel-headers
 gnome-disk-utility
 gnome-packagekit
 firefox
+vinagre
 openssh-clients
 sudo
 net-tools
@@ -45,7 +47,9 @@ rsync
 perl
 bzip2
 gcc
+dkms
 make
+cabextract
 
 -empathy
 -postfix
