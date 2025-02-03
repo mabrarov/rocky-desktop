@@ -70,6 +70,7 @@ cabextract
 -setroubleshoot-*
 -totem
 -totem-nautilus
+-cockpit*
 %end
 
 %post
