@@ -73,7 +73,7 @@ cabextract
 -cockpit*
 %end
 
-%post
+%post --erroronfail
 
 dnf remove -y PackageKit*
 
