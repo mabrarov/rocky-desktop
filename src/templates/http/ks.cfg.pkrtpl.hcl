@@ -11,7 +11,7 @@ bootloader --location=mbr
 text
 zerombr
 clearpart --all --initlabel
-autopart
+autopart --type=plain
 auth --useshadow --passalgo=sha512
 xconfig --defaultdesktop=GNOME --startxonboot
 firstboot --disabled
