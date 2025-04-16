@@ -9,7 +9,7 @@ packer {
 
 variable "vm_version" {
   type        = string
-  default     = "1.0.6"
+  default     = "1.0.7"
   description = "Version of OVA"
 }
 
@@ -56,8 +56,8 @@ source "virtualbox-iso" "rocky-desktop" {
   }
   iso_url                = "Rocky-9.5-x86_64-dvd.iso"
   iso_checksum           = "sha256:ba60c3653640b5747610ddfb4d09520529bef2d1d83c1feb86b0c84dff31e04e"
-  guest_additions_url    = "VBoxGuestAdditions_7.1.6.iso"
-  guest_additions_sha256 = "dbbda1645bc05c9260adfe9efc4949cb590ec5ec02680aff936375670cffcafc"
+  guest_additions_url    = "VBoxGuestAdditions_7.1.8.iso"
+  guest_additions_sha256 = "0001ed19cc389f04723c9b911338559b9b74bea0d24edf794d8d2ce5b5cb14e0"
   guest_additions_path   = "VBoxGuestAdditions.iso"
   boot_command = [
     "<up><wait><tab> inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
