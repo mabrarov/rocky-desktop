@@ -11,7 +11,7 @@
 
 ## Steps to build
 
-1. Download [Rocky-9.5-x86_64-dvd.iso](https://rockylinux.org/ru/download) and put it into the root directory of repository.
+1. Download [Rocky-9.6-x86_64-dvd.iso](https://rockylinux.org/ru/download) and put it into the root directory of repository.
 1. Download [VBoxGuestAdditions_7.1.8.iso](https://download.virtualbox.org/virtualbox/7.1.8/VBoxGuestAdditions_7.1.8.iso) and put it into the root directory of repository.
 1. Run
     ```bash
