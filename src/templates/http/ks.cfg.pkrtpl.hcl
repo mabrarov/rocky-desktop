@@ -82,8 +82,15 @@ echo "timeout=300" >> /etc/dnf/dnf.conf
 # ... and decrease minimum DNF download speed
 echo "minrate=1" >> /etc/dnf/dnf.conf
 
+# Replace broken mirrors for YUM repositories with direct links
+sed -ir 's/^mirrorlist/#mirrorlist/g' /etc/yum.repos.d/*.repo
+sed -ir 's/^#baseurl/baseurl/g' /etc/yum.repos.d/*.repo
+
+# Clean DNF cache
+dnf --enablerepo=* clean all
+rm -rf /var/cache/dnf
+
 # Update
-dnf --enablerepo=base clean metadata
 dnf update -y --refresh
 
 # Turning off sshd DNS lookup to prevent timeout delay
