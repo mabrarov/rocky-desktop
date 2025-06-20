@@ -1,17 +1,17 @@
-# Rocky Linux 9 Desktop
+# Rocky Linux 10 Desktop
 
-[Packer](http://packer.io/intro/index.html) project for Virtual Appliance with VirtualBox VM based on Rocky Linux 9 with GNOME and VirtualBox Guest Additions.
+[Packer](http://packer.io/intro/index.html) project for Virtual Appliance with VirtualBox VM based on Rocky Linux 10 with GNOME and VirtualBox Guest Additions.
 
 ## Build requirements
 
-1. [Oracle VirtualBox](https://www.virtualbox.org/) 7.1.4+.
+1. [Oracle VirtualBox](https://www.virtualbox.org/) 7.1.10+.
 1. [HashiCorp Packer](http://packer.io/downloads.html) 1.11.2+.
 1. All commands assume current directory is the one where this repository is cloned.
 1. All commands assume usage of Bash. Git Bash on Windows is tested and supported too.
 
 ## Steps to build
 
-1. Download [Rocky-9.6-x86_64-dvd.iso](https://rockylinux.org/ru/download) and put it into the root directory of repository.
+1. Download [Rocky-10.0-x86_64-dvd1.iso](https://rockylinux.org/ru/download) and put it into the root directory of repository.
 1. Download [VBoxGuestAdditions_7.1.10.iso](https://download.virtualbox.org/virtualbox/7.1.10/VBoxGuestAdditions_7.1.10.iso) and put it into the root directory of repository.
 1. Run
     ```bash

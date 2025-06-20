@@ -12,7 +12,6 @@ text
 zerombr
 clearpart --all --initlabel
 autopart --type=plain
-auth --useshadow --passalgo=sha512
 xconfig --defaultdesktop=GNOME --startxonboot
 firstboot --disabled
 eula --agreed
