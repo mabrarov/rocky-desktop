@@ -9,7 +9,7 @@ packer {
 
 variable "vm_version" {
   type        = string
-  default     = "1.0.9"
+  default     = "2.0.0"
   description = "Version of OVA"
 }
 
@@ -21,7 +21,7 @@ variable "vm_name" {
 
 variable "vm_description" {
   type        = string
-  default     = "Rocky Linux 9 with GNOME"
+  default     = "Rocky Linux 10 with GNOME"
   description = "VM description"
 }
 
@@ -54,13 +54,17 @@ source "virtualbox-iso" "rocky-desktop" {
       password = var.guest_os_password
     })
   }
-  iso_url                = "Rocky-9.6-x86_64-dvd.iso"
-  iso_checksum           = "sha256:8ff2a47e2f3bfe442617fceb7ef289b7b1d2d0502089dbbd505d5368b2b3a90f"
+  iso_url                = "Rocky-10.0-x86_64-dvd1.iso"
+  iso_checksum           = "sha256:678ea3e1eea6f5d6c220c46fab34f5e0add260e7b64f0139ee3b9f7b7ca7d2f3"
   guest_additions_url    = "VBoxGuestAdditions_7.2.2.iso"
   guest_additions_sha256 = "42457487fb5f117265fe41bf8b2a521449c2cff75c95029d8f667f7dab5a4409"
   guest_additions_path   = "VBoxGuestAdditions.iso"
   boot_command = [
-    "<up><wait><tab> inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+    "<up>",
+    "e",
+    "<down><down><end><wait>",
+    "text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+    "<enter><wait><leftCtrlOn>x<leftCtrlOff>"
   ]
   boot_wait            = "30s"
   shutdown_command     = "echo '${var.guest_os_username}' | sudo -S /sbin/halt -h -p"
@@ -108,7 +112,6 @@ build {
     scripts = [
       "src/scripts/virtualbox.sh",
       "src/scripts/vagrant.sh",
-      "src/scripts/gnome.sh",
       "src/scripts/cleanup.sh"
     ]
   }
