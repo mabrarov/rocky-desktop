@@ -56,8 +56,8 @@ source "virtualbox-iso" "rocky-desktop" {
   }
   iso_url                = "Rocky-9.8-x86_64-dvd.iso"
   iso_checksum           = "sha256:d2bcbb64c2d67511adf80d40cd9543391a33aea5860a355b1d26d7f55236d01f"
-  guest_additions_url    = "VBoxGuestAdditions_7.2.16.iso"
-  guest_additions_sha256 = "c9349c0231d81c821fc1de7b9592bf07bb7c3f111c3f942ddddc211496ef7a3e"
+  guest_additions_url    = "VBoxGuestAdditions_7.2.22.iso"
+  guest_additions_sha256 = "fc41354d8b974051fa33ca5a4f9c999a58c6e0dfc595b02a924a544392234b3d"
   guest_additions_path   = "VBoxGuestAdditions.iso"
   boot_command = [
     "<up><wait><tab> inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
